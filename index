@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Whisper · The Honest Hypocrite · 心 Palette Studies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1a1614;
+    --paper: #e8e2d5;
+    --paper-dim: #d9d1c0;
+    --rule: rgba(26, 22, 20, 0.18);
+    --whisper: rgba(26, 22, 20, 0.55);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  .container { position: relative; z-index: 2; }
+
+  /* ============ MASTHEAD ============ */
+  header {
+    padding: 5rem 6vw 3rem;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+
+  header::after {
+    content: '心';
+    position: absolute;
+    right: 6vw;
+    top: 4rem;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 300;
+    font-size: clamp(5rem, 14vw, 14rem);
+    opacity: 0.08;
+    line-height: 1;
+    color: var(--ink);
+    pointer-events: none;
+  }
+
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--whisper);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-variation-settings: 'opsz' 144;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--whisper);
+  }
+
+  .epigraph {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    line-height: 1.5;
+    max-width: 52ch;
+    color: var(--ink);
+    opacity: 0.75;
+    margin-top: 2rem;
+    padding-left: 1.2rem;
+    border-left: 1px solid var(--rule);
+    position: relative;
+    z-index: 2;
+  }
+
+  .epigraph cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* ============ INTRO ============ */
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 4rem 6vw;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .intro p {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    max-width: 50ch;
+  }
+
+  .intro p + p { margin-top: 1.2rem; }
+
+  .intro .concept-word {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15em;
+    font-weight: 400;
+  }
+
+  .intro .jp {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    margin-right: 0.15em;
+  }
+
+  /* ============ TREND NOTE ============ */
+  .trend-note {
+    padding: 2.5rem 6vw;
+    border-bottom: 1px solid var(--rule);
+    background: rgba(26, 22, 20, 0.03);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .trend-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--whisper);
+  }
+
+  .trend-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 60ch;
+    color: var(--ink);
+    opacity: 0.8;
+  }
+
+  .trend-body strong {
+    font-family: 'Fraunces', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.95em;
+  }
+
+  /* ============ PALETTE SECTIONS ============ */
+  .palette-section {
+    padding: 5rem 6vw 6rem;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+
+  .palette-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .palette-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--whisper);
+  }
+
+  .palette-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-variation-settings: 'opsz' 144;
+  }
+
+  .palette-name em {
+    font-style: italic;
+    color: var(--whisper);
+  }
+
+  .palette-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--whisper);
+    text-align: right;
+  }
+
+  /* Japanese concept row */
+  .jp-concept {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    color: var(--whisper);
+    flex-wrap: wrap;
+  }
+
+  .jp-concept .kanji-big {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 300;
+    font-size: 2.8rem;
+    color: var(--ink);
+    opacity: 0.9;
+    line-height: 1;
+  }
+
+  .jp-concept .romaji {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--ink);
+    opacity: 0.75;
+  }
+
+  .jp-concept .gloss {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--whisper);
+    padding-left: 1rem;
+    border-left: 1px solid var(--rule);
+  }
+
+  /* Two-column: swatches on left, notes on right */
+  .palette-body {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 4rem;
+  }
+
+  /* ============ SWATCH STRIP ============ */
+  .swatch-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+  }
+
+  .swatch {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    padding: 1.4rem 1.6rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    min-height: 5rem;
+  }
+
+  .swatch:last-child { border-bottom: none; }
+
+  .swatch:hover {
+    padding-left: 2.4rem;
+  }
+
+  .swatch-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .swatch-role {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-top: 0.3rem;
+  }
+
+  .swatch-hex {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    margin-right: 1rem;
+  }
+
+  .copy-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid currentColor;
+    color: inherit;
+    padding: 0.4rem 0.7rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    min-width: 4.2rem;
+  }
+
+  .swatch:hover .copy-btn { opacity: 1; }
+
+  .copy-btn.copied {
+    opacity: 1;
+    background: currentColor;
+  }
+
+  .copy-btn.copied::before {
+    content: 'copied';
+  }
+
+  .copy-btn.copied span { display: none; }
+
+  /* ============ NOTES COLUMN ============ */
+  .palette-notes {
+    padding-top: 0.5rem;
+  }
+
+  .notes-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--whisper);
+    margin-bottom: 1rem;
+  }
+
+  .register {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    line-height: 1.4;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .usage {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .usage strong {
+    font-weight: 400;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05em;
+  }
+
+  .watts-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--whisper);
+    padding-left: 1rem;
+    border-left: 1px solid var(--rule);
+    margin-top: 2rem;
+  }
+
+  .watts-quote cite {
+    display: block;
+    margin-top: 0.4rem;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  /* ============ MOOD STRIP ============ */
+  .mood-strip {
+    display: flex;
+    height: 120px;
+    margin-top: 2rem;
+    border: 1px solid var(--rule);
+  }
+
+  .mood-strip > div {
+    flex: 1;
+    transition: flex 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .mood-strip:hover > div { flex: 0.7; }
+  .mood-strip > div:hover { flex: 3 !important; }
+
+  /* ============ SYSTEM MAP ============ */
+  .system-map {
+    padding: 5rem 6vw 6rem;
+    border-bottom: 1px solid var(--rule);
+    background: rgba(26, 22, 20, 0.04);
+  }
+
+  .system-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    margin-top: 3rem;
+    border: 1px solid var(--rule);
+  }
+
+  .system-col {
+    border-right: 1px solid var(--rule);
+    padding: 2rem 1.2rem;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .system-col:last-child { border-right: none; }
+
+  .system-col-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 0.8rem;
+  }
+
+  .system-col-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .system-col-kanji {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 3rem;
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .system-swatch-mini {
+    height: 14px;
+    margin-bottom: 2px;
+  }
+
+  .system-col-use {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    opacity: 0.7;
+    margin-top: 1rem;
+  }
+
+  /* ============ COVER SPECIMENS ============ */
+  .specimens-section {
+    padding: 5rem 6vw 6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .specimen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .cover {
+    aspect-ratio: 3/4;
+    padding: 2.5rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .cover:hover {
+    transform: translateY(-6px);
+  }
+
+  .cover-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  .cover-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    font-variation-settings: 'opsz' 144;
+  }
+
+  .cover-title em { font-style: italic; }
+
+  .cover-foot {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-top: 1.2rem;
+  }
+
+  .cover-kanji {
+    position: absolute;
+    top: 2rem;
+    right: 1.8rem;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    opacity: 0.45;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 4rem 6vw 3rem;
+    text-align: center;
+  }
+
+  footer p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--whisper);
+    max-width: 52ch;
+    margin: 0 auto 1rem;
+    line-height: 1.5;
+  }
+
+  footer .sig {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--whisper);
+    margin-top: 2rem;
+  }
+
+  footer .sig-kanji {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    margin: 0 0.3em;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 1000px) {
+    .system-grid { grid-template-columns: repeat(3, 1fr); }
+    .system-col:nth-child(3) { border-right: none; }
+    .system-col:nth-child(-n+3) { border-bottom: 1px solid var(--rule); }
+  }
+
+  @media (max-width: 860px) {
+    .intro, .palette-body, .trend-note { grid-template-columns: 1fr; gap: 2rem; }
+    .palette-header { grid-template-columns: 1fr; gap: 0.5rem; }
+    .palette-meta { text-align: left; }
+    .swatch { padding: 1.1rem 1.2rem; }
+    .swatch:hover { padding-left: 1.6rem; }
+    .system-grid { grid-template-columns: repeat(2, 1fr); }
+    .system-col { border-right: none; border-bottom: 1px solid var(--rule); }
+    .system-col:nth-child(2n) { border-right: none; }
+    .system-col:nth-child(odd) { border-right: 1px solid var(--rule); }
+  }
+
+  @media (max-width: 500px) {
+    .system-grid { grid-template-columns: 1fr; }
+    .system-col, .system-col:nth-child(odd) { border-right: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ============ MASTHEAD ============ -->
+<header>
+  <div class="kicker">
+    <span>WHISPER / SUB-LINE №01 · V.02</span>
+    <span>COLOR STUDY · 心 · 2026</span>
+  </div>
+  <h1>The Honest<br/><em>Hypocrite</em></h1>
+  <div class="epigraph">
+    "You're just a bundle of anxiety, mixed up with guilt." — And that's exactly why I've got nothing to lose. I'm a bad example of what I'm preaching, which is the only honest place to preach from.
+    <cite>— Alan Watts, paraphrased · Candan, extended</cite>
+  </div>
+</header>
+
+<!-- ============ INTRO ============ -->
+<section class="intro">
+  <p>
+    Six palettes for a line about the <span class="concept-word">skin-encapsulated ego</span> — Watts's phrase for the illusion of being a separate self trapped in a bag of skin, looking out. His whole project was dismantling that partition. These colors live in the dissolve.
+  </p>
+  <p>
+    Each palette is anchored to a Japanese concept — not as decoration, but as structure. <span class="jp">心</span><span class="concept-word">kokoro · shin</span> — the felt-thinking center. Not the brain. Not the feelings. The place where both meet before they split into categories.
+  </p>
+  <p>
+    None of these look like wellness. None look like mindfulness. They look like a room at 4am, a cigarette burning down, the exact shade of a thought you haven't finished yet. A line for people who recognize themselves in the sentence <em>I'm a bad example of what I'm preaching</em> — and keep preaching anyway, because the alternative is pretending.
+  </p>
+  <p>
+    The register is: <strong style="font-weight:400; font-style:italic;">Watts at 2am, not Watts on the lecture circuit.</strong> Confessional. Composed. Slightly unwell. Undefended.
+  </p>
+</section>
+
+<!-- ============ TREND NOTE ============ -->
+<section class="trend-note">
+  <div class="trend-label">
+    2026 Direction<br/><span style="opacity:0.6;">why these palettes</span><br/><span style="opacity:0.6;">feel current</span>
+  </div>
+  <div class="trend-body">
+    The 2026 color forecasts have converged around a single phrase — <strong>"colour that makes us feel"</strong> — in direct response to digital fatigue and algorithmic sameness. The dominant signals: chocolate brown, oxblood, smoky olive, mineral clay, warm taupe, plum, tobacco, moss. Sherwin-Williams named their 2026 collection <em>Honest Essentials</em>. The zeitgeist is moving toward The Honest Hypocrite's frequency on its own — grounded, warm, unashamed of darkness, skeptical of the performed serenity of the last decade. These six palettes sit on that current without chasing it.
+  </div>
+</section>
+
+<!-- ============ PALETTE 01 — THE BUNDLE OF ANXIETY ============ -->
+<section class="palette-section">
+  <div class="palette-header">
+    <div class="palette-num">№ 01</div>
+    <div class="palette-name">The Bundle of <em>Anxiety</em></div>
+    <div class="palette-meta">DUSK · UNRESOLVED · INTERIOR</div>
+  </div>
+
+  <div class="jp-concept">
+    <span class="kanji-big">不安</span>
+    <span class="romaji">fuan</span>
+    <span class="gloss">the uneasy · the unsettled mind · a disquiet that won't name itself</span>
+  </div>
+
+  <div class="palette-body">
+    <div>
+      <div class="swatch-strip">
+        <div class="swatch" style="background:#1F1B1A; color:#D4C9B8;" data-hex="#1F1B1A">
+          <div class="swatch-name">Tobacco Black<span class="swatch-role">Primary · Ground</span></div>
+          <div class="swatch-hex">#1F1B1A</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#3D3530; color:#D4C9B8;" data-hex="#3D3530">
+          <div class="swatch-name">Wet Stone<span class="swatch-role">Secondary · Weight</span></div>
+          <div class="swatch-hex">#3D3530</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#6B5E52; color:#EDE4D3;" data-hex="#6B5E52">
+          <div class="swatch-name">Hesitation<span class="swatch-role">Tertiary · Pause</span></div>
+          <div class="swatch-hex">#6B5E52</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#A89680; color:#2A2521;" data-hex="#A89680">
+          <div class="swatch-name">Unfinished Thought<span class="swatch-role">Mid · Drift</span></div>
+          <div class="swatch-hex">#A89680</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#D4C4AA; color:#2A2521;" data-hex="#D4C4AA">
+          <div class="swatch-name">Lamplight<span class="swatch-role">Light · Relief</span></div>
+          <div class="swatch-hex">#D4C4AA</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#8B3A3A; color:#EDE4D3;" data-hex="#8B3A3A">
+          <div class="swatch-name">Bitten Lip<span class="swatch-role">Accent · Pulse</span></div>
+          <div class="swatch-hex">#8B3A3A</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+      </div>
+      <div class="mood-strip">
+        <div style="background:#1F1B1A"></div>
+        <div style="background:#3D3530"></div>
+        <div style="background:#6B5E52"></div>
+        <div style="background:#A89680"></div>
+        <div style="background:#D4C4AA"></div>
+        <div style="background:#8B3A3A"></div>
+      </div>
+    </div>
+
+    <div class="palette-notes">
+      <div class="notes-label">Register</div>
+      <div class="register">
+        The 4am palette. Insomnia made visible. The color of being alone with a thought you can't put down.
+      </div>
+      <div class="usage">
+        <strong>Where it lives:</strong> The anchor cover for the whole line. PDF guides on anxiety, overthinking, the body keeping score. Anything that needs to signal <em>I'm not going to pretend I have this figured out.</em>
+      </div>
+      <div class="usage">
+        <strong>Typography:</strong> Tobacco Black ground, Lamplight type, Bitten Lip for a single detail — pull-quote, page number, the word that matters most on the cover.
+      </div>
+      <div class="watts-quote">
+        The mystic and the madman find themselves in the same ocean, but the mystic swims, whereas the madman drowns.
+        <cite>— Watts</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALETTE 02 — SKIN-ENCAPSULATED EGO ============ -->
+<section class="palette-section">
+  <div class="palette-header">
+    <div class="palette-num">№ 02</div>
+    <div class="palette-name">Skin-<em>Encapsulated</em></div>
+    <div class="palette-meta">MEMBRANE · WARM · PERMEABLE</div>
+  </div>
+
+  <div class="jp-concept">
+    <span class="kanji-big">身</span>
+    <span class="romaji">mi</span>
+    <span class="gloss">the body · the embodied self · where skin meets thought</span>
+  </div>
+
+  <div class="palette-body">
+    <div>
+      <div class="swatch-strip">
+        <div class="swatch" style="background:#2B1F1B; color:#E8D5C0;" data-hex="#2B1F1B">
+          <div class="swatch-name">Inside the Skin<span class="swatch-role">Deep · Interior</span></div>
+          <div class="swatch-hex">#2B1F1B</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#6F3A2E; color:#E8D5C0;" data-hex="#6F3A2E">
+          <div class="swatch-name">Blood Warmth<span class="swatch-role">Body · Pulse</span></div>
+          <div class="swatch-hex">#6F3A2E</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#B87A5E; color:#2B1F1B;" data-hex="#B87A5E">
+          <div class="swatch-name">Membrane<span class="swatch-role">Boundary · Soft</span></div>
+          <div class="swatch-hex">#B87A5E</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#D9A688; color:#2B1F1B;" data-hex="#D9A688">
+          <div class="swatch-name">Flushed<span class="swatch-role">Mid · Felt</span></div>
+          <div class="swatch-hex">#D9A688</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#E8D5C0; color:#2B1F1B;" data-hex="#E8D5C0">
+          <div class="swatch-name">Breath<span class="swatch-role">Light · Outside</span></div>
+          <div class="swatch-hex">#E8D5C0</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#3F2A28; color:#E8D5C0;" data-hex="#3F2A28">
+          <div class="swatch-name">Dried Rose<span class="swatch-role">Accent · Memory</span></div>
+          <div class="swatch-hex">#3F2A28</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+      </div>
+      <div class="mood-strip">
+        <div style="background:#2B1F1B"></div>
+        <div style="background:#6F3A2E"></div>
+        <div style="background:#B87A5E"></div>
+        <div style="background:#D9A688"></div>
+        <div style="background:#E8D5C0"></div>
+        <div style="background:#3F2A28"></div>
+      </div>
+    </div>
+
+    <div class="palette-notes">
+      <div class="notes-label">Register</div>
+      <div class="register">
+        The body palette. The inside-looking-out. Warm enough to feel human, dark enough to admit the human is tired.
+      </div>
+      <div class="usage">
+        <strong>Where it lives:</strong> Products about the felt-sense, somatic work, the nervous system. Anything that treats the body as the site of the work — not as the problem to be managed.
+      </div>
+      <div class="usage">
+        <strong>Typography:</strong> Serif display on Breath. Inside the Skin for body text. Blood Warmth for dividers and emphasis marks.
+      </div>
+      <div class="watts-quote">
+        We do not come into this world; we come out of it, as leaves from a tree.
+        <cite>— Watts</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALETTE 03 — THE DISSOLVING SELF ============ -->
+<section class="palette-section">
+  <div class="palette-header">
+    <div class="palette-num">№ 03</div>
+    <div class="palette-name">The <em>Dissolving</em> Self</div>
+    <div class="palette-meta">VAPOR · TINTED WHITES · LAVENDER ASH</div>
+  </div>
+
+  <div class="jp-concept">
+    <span class="kanji-big">無我</span>
+    <span class="romaji">muga</span>
+    <span class="gloss">no-self · the edges thinning · the ego losing its outline</span>
+  </div>
+
+  <div class="palette-body">
+    <div>
+      <div class="swatch-strip">
+        <div class="swatch" style="background:#2D2E38; color:#E5E0E8;" data-hex="#2D2E38">
+          <div class="swatch-name">Before Morning<span class="swatch-role">Ground · Quiet</span></div>
+          <div class="swatch-hex">#2D2E38</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#4A4B58; color:#E5E0E8;" data-hex="#4A4B58">
+          <div class="swatch-name">Thinning Edge<span class="swatch-role">Secondary</span></div>
+          <div class="swatch-hex">#4A4B58</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#8B8799; color:#F5F2F0;" data-hex="#8B8799">
+          <div class="swatch-name">Mauve Fog<span class="swatch-role">Mid · Drift</span></div>
+          <div class="swatch-hex">#8B8799</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#B8B0BC; color:#2D2E38;" data-hex="#B8B0BC">
+          <div class="swatch-name">Not-Self<span class="swatch-role">Mid · Permeable</span></div>
+          <div class="swatch-hex">#B8B0BC</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#E5E0E8; color:#2D2E38;" data-hex="#E5E0E8">
+          <div class="swatch-name">Tinted White<span class="swatch-role">Paper · Light</span></div>
+          <div class="swatch-hex">#E5E0E8</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#6B6378; color:#E5E0E8;" data-hex="#6B6378">
+          <div class="swatch-name">Lavender Ash<span class="swatch-role">Accent · Held</span></div>
+          <div class="swatch-hex">#6B6378</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+      </div>
+      <div class="mood-strip">
+        <div style="background:#2D2E38"></div>
+        <div style="background:#4A4B58"></div>
+        <div style="background:#8B8799"></div>
+        <div style="background:#B8B0BC"></div>
+        <div style="background:#E5E0E8"></div>
+        <div style="background:#6B6378"></div>
+      </div>
+    </div>
+
+    <div class="palette-notes">
+      <div class="notes-label">Register</div>
+      <div class="register">
+        The ego losing its outline. Vapor at the edges. The color of realizing the self you defended wasn't real to begin with.
+      </div>
+      <div class="usage">
+        <strong>Where it lives:</strong> The philosophical heart of the line. Products about identity, dissociation done well, not-self, the quiet unmaking. This is the palette that will travel best on Instagram — atmospheric, photo-friendly, mood-forward.
+      </div>
+      <div class="usage">
+        <strong>Typography:</strong> Tinted White paper with Before Morning type. Italic display in Lavender Ash. Generous air between lines — the layout itself should feel like it's dissolving.
+      </div>
+      <div class="watts-quote">
+        Trying to define yourself is like trying to bite your own teeth.
+        <cite>— Watts</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALETTE 04 — COSMIC JOKE ============ -->
+<section class="palette-section">
+  <div class="palette-header">
+    <div class="palette-num">№ 04</div>
+    <div class="palette-name">The Cosmic <em>Joke</em></div>
+    <div class="palette-meta">OXBLOOD · CITRON · PLAYFUL DREAD</div>
+  </div>
+
+  <div class="jp-concept">
+    <span class="kanji-big">滑稽</span>
+    <span class="romaji">kokkei</span>
+    <span class="gloss">the absurd · the universe laughing · grief and amusement, same breath</span>
+  </div>
+
+  <div class="palette-body">
+    <div>
+      <div class="swatch-strip">
+        <div class="swatch" style="background:#1C1412; color:#C9A961;" data-hex="#1C1412">
+          <div class="swatch-name">Black Comedy<span class="swatch-role">Ground · Deep</span></div>
+          <div class="swatch-hex">#1C1412</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#5E1A1A; color:#E8DCC0;" data-hex="#5E1A1A">
+          <div class="swatch-name">Oxblood, Deepened<span class="swatch-role">Primary · Weight</span></div>
+          <div class="swatch-hex">#5E1A1A</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#5C4A2A; color:#E8DCC0;" data-hex="#5C4A2A">
+          <div class="swatch-name">Old Brass<span class="swatch-role">Mid · Earned</span></div>
+          <div class="swatch-hex">#5C4A2A</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#C9A961; color:#1C1412;" data-hex="#C9A961">
+          <div class="swatch-name">Honest Gold<span class="swatch-role">Accent · Wink</span></div>
+          <div class="swatch-hex">#C9A961</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#A8B03F; color:#1C1412;" data-hex="#A8B03F">
+          <div class="swatch-name">Gothic Citron<span class="swatch-role">Accent · Laugh</span></div>
+          <div class="swatch-hex">#A8B03F</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#E8DCC0; color:#1C1412;" data-hex="#E8DCC0">
+          <div class="swatch-name">Parchment<span class="swatch-role">Paper · Dry</span></div>
+          <div class="swatch-hex">#E8DCC0</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+      </div>
+      <div class="mood-strip">
+        <div style="background:#1C1412"></div>
+        <div style="background:#5E1A1A"></div>
+        <div style="background:#5C4A2A"></div>
+        <div style="background:#C9A961"></div>
+        <div style="background:#A8B03F"></div>
+        <div style="background:#E8DCC0"></div>
+      </div>
+    </div>
+
+    <div class="palette-notes">
+      <div class="notes-label">Register</div>
+      <div class="register">
+        Watts laughing at himself. The universe as slapstick. Grief and amusement in the same breath — the honest hypocrite's native frequency.
+      </div>
+      <div class="usage">
+        <strong>Where it lives:</strong> Products with wit. The provocations, the confession pieces, the ones that admit something unflattering and true. Gothic Citron is the wild card — use it on 3% of the design, never more.
+      </div>
+      <div class="usage">
+        <strong>Typography:</strong> Deepened Oxblood cover, Parchment interior, Honest Gold for the title's key word. Citron only for a single marginal mark — a bracket, a flag, a footnote pointer.
+      </div>
+      <div class="watts-quote">
+        I am not overly impressed by greatness or power.
+        <cite>— Watts</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALETTE 05 — MU (NEW) ============ -->
+<section class="palette-section">
+  <div class="palette-header">
+    <div class="palette-num">№ 05</div>
+    <div class="palette-name">Mu · <em>The Unasked Question</em></div>
+    <div class="palette-meta">SMOKED OLIVE · MOSS · ZEN GARDEN</div>
+  </div>
+
+  <div class="jp-concept">
+    <span class="kanji-big">無</span>
+    <span class="romaji">mu</span>
+    <span class="gloss">nothingness · unasking · the answer that refuses the question's frame</span>
+  </div>
+
+  <div class="palette-body">
+    <div>
+      <div class="swatch-strip">
+        <div class="swatch" style="background:#1A1E16; color:#CDBF9F;" data-hex="#1A1E16">
+          <div class="swatch-name">Wet Moss at Night<span class="swatch-role">Ground · Deep Green</span></div>
+          <div class="swatch-hex">#1A1E16</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#32382A; color:#CDBF9F;" data-hex="#32382A">
+          <div class="swatch-name">Smoked Olive<span class="swatch-role">Primary · Weight</span></div>
+          <div class="swatch-hex">#32382A</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#595E48; color:#E3DBC5;" data-hex="#595E48">
+          <div class="swatch-name">Bamboo Shadow<span class="swatch-role">Secondary · Still</span></div>
+          <div class="swatch-hex">#595E48</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#8C8A6A; color:#1A1E16;" data-hex="#8C8A6A">
+          <div class="swatch-name">Raked Sand<span class="swatch-role">Mid · Intentional</span></div>
+          <div class="swatch-hex">#8C8A6A</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#CDBF9F; color:#1A1E16;" data-hex="#CDBF9F">
+          <div class="swatch-name">Tatami<span class="swatch-role">Light · Warm Paper</span></div>
+          <div class="swatch-hex">#CDBF9F</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#7A3B2F; color:#E3DBC5;" data-hex="#7A3B2F">
+          <div class="swatch-name">Lacquered Red<span class="swatch-role">Accent · Temple</span></div>
+          <div class="swatch-hex">#7A3B2F</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+      </div>
+      <div class="mood-strip">
+        <div style="background:#1A1E16"></div>
+        <div style="background:#32382A"></div>
+        <div style="background:#595E48"></div>
+        <div style="background:#8C8A6A"></div>
+        <div style="background:#CDBF9F"></div>
+        <div style="background:#7A3B2F"></div>
+      </div>
+    </div>
+
+    <div class="palette-notes">
+      <div class="notes-label">Register</div>
+      <div class="register">
+        The Zen koan palette. When the student asks the wrong question, the master answers <em>mu</em> — meaning: your question doesn't apply. The color of refusing the premise.
+      </div>
+      <div class="usage">
+        <strong>Where it lives:</strong> The Watts-at-Tassajara products. Meditation-adjacent without being meditation-branded. Pieces about silence, refusal, the unanswered. Also the most 2026-current palette — smoky olive is the color of the year across three major forecasts.
+      </div>
+      <div class="usage">
+        <strong>Typography:</strong> Tatami paper, Smoked Olive type. Lacquered Red for a single punctuation mark — a period, a temple gate, the end of the question. Never a pull-quote. The whole palette resists emphasis.
+      </div>
+      <div class="watts-quote">
+        Zen does not confuse spirituality with thinking about God while one is peeling potatoes. Zen spirituality is just to peel the potatoes.
+        <cite>— Watts</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALETTE 06 — NOTHING TO LOSE ============ -->
+<section class="palette-section">
+  <div class="palette-header">
+    <div class="palette-num">№ 06</div>
+    <div class="palette-name">Nothing to <em>Lose</em></div>
+    <div class="palette-meta">MONOCHROME · BONE · INK</div>
+  </div>
+
+  <div class="jp-concept">
+    <span class="kanji-big">侘</span>
+    <span class="romaji">wabi</span>
+    <span class="gloss">austere beauty · the elegance of having nothing to prove</span>
+  </div>
+
+  <div class="palette-body">
+    <div>
+      <div class="swatch-strip">
+        <div class="swatch" style="background:#0F0D0C; color:#EAE3D2;" data-hex="#0F0D0C">
+          <div class="swatch-name">Void<span class="swatch-role">Absolute · Ground</span></div>
+          <div class="swatch-hex">#0F0D0C</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#3A332E; color:#EAE3D2;" data-hex="#3A332E">
+          <div class="swatch-name">Ink, Drying<span class="swatch-role">Dark · Weight</span></div>
+          <div class="swatch-hex">#3A332E</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#7A6E5F; color:#EAE3D2;" data-hex="#7A6E5F">
+          <div class="swatch-name">Old Paper<span class="swatch-role">Mid · Worn</span></div>
+          <div class="swatch-hex">#7A6E5F</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#B5A994; color:#0F0D0C;" data-hex="#B5A994">
+          <div class="swatch-name">Bone<span class="swatch-role">Mid · Time</span></div>
+          <div class="swatch-hex">#B5A994</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#EAE3D2; color:#0F0D0C;" data-hex="#EAE3D2">
+          <div class="swatch-name">Linen<span class="swatch-role">Light · Paper</span></div>
+          <div class="swatch-hex">#EAE3D2</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+        <div class="swatch" style="background:#5A2A20; color:#EAE3D2;" data-hex="#5A2A20">
+          <div class="swatch-name">Last Word<span class="swatch-role">Accent · Rare</span></div>
+          <div class="swatch-hex">#5A2A20</div>
+          <button class="copy-btn"><span>copy</span></button>
+        </div>
+      </div>
+      <div class="mood-strip">
+        <div style="background:#0F0D0C"></div>
+        <div style="background:#3A332E"></div>
+        <div style="background:#7A6E5F"></div>
+        <div style="background:#B5A994"></div>
+        <div style="background:#EAE3D2"></div>
+        <div style="background:#5A2A20"></div>
+      </div>
+    </div>
+
+    <div class="palette-notes">
+      <div class="notes-label">Register</div>
+      <div class="register">
+        The most austere palette in the line. Stripped down. No decoration. The palette that says — <em>I have nothing to prove and nothing to sell you.</em>
+      </div>
+      <div class="usage">
+        <strong>Where it lives:</strong> The manifesto pieces. The shortest, densest products. Anything that earns its authority by being unadorned. Works beautifully as a contrast cover in a shelf of Palette 02 or 03.
+      </div>
+      <div class="usage">
+        <strong>Typography:</strong> High-contrast only. Void on Linen, or the inverse. Last Word for a single glyph — an em-dash, a period, the final word of the title. Never more than one use per cover.
+      </div>
+      <div class="watts-quote">
+        I owe my solitude to other people.
+        <cite>— Watts</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SYSTEM MAP — HOW THEY WORK TOGETHER ============ -->
+<section class="system-map">
+  <div class="palette-header">
+    <div class="palette-num">SYSTEM</div>
+    <div class="palette-name">How they <em>move</em> together</div>
+    <div class="palette-meta">SIX REGISTERS · ONE LINE</div>
+  </div>
+
+  <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; line-height:1.5; max-width:62ch; color:var(--ink); opacity:0.8; margin-top:2rem;">
+    The palettes aren't six separate options — they're six registers of the same voice. Each product in the line picks one register. The shelf holds all six. The whole system stays cohesive because every palette shares one rule: dark ground, warm paper, single accent that does the emotional work.
+  </p>
+
+  <div class="system-grid">
+    <div class="system-col">
+      <div>
+        <div class="system-col-label">№ 01</div>
+        <div class="system-col-kanji">不安</div>
+        <div class="system-col-title">The Bundle of Anxiety</div>
+      </div>
+      <div>
+        <div class="system-swatch-mini" style="background:#1F1B1A;"></div>
+        <div class="system-swatch-mini" style="background:#3D3530;"></div>
+        <div class="system-swatch-mini" style="background:#6B5E52;"></div>
+        <div class="system-swatch-mini" style="background:#A89680;"></div>
+        <div class="system-swatch-mini" style="background:#D4C4AA;"></div>
+        <div class="system-swatch-mini" style="background:#8B3A3A;"></div>
+        <div class="system-col-use">anchor · 4am · anxiety · insomnia</div>
+      </div>
+    </div>
+
+    <div class="system-col">
+      <div>
+        <div class="system-col-label">№ 02</div>
+        <div class="system-col-kanji">身</div>
+        <div class="system-col-title">Skin-Encapsulated</div>
+      </div>
+      <div>
+        <div class="system-swatch-mini" style="background:#2B1F1B;"></div>
+        <div class="system-swatch-mini" style="background:#6F3A2E;"></div>
+        <div class="system-swatch-mini" style="background:#B87A5E;"></div>
+        <div class="system-swatch-mini" style="background:#D9A688;"></div>
+        <div class="system-swatch-mini" style="background:#E8D5C0;"></div>
+        <div class="system-swatch-mini" style="background:#3F2A28;"></div>
+        <div class="system-col-use">body · soma · felt-sense · warmth</div>
+      </div>
+    </div>
+
+    <div class="system-col">
+      <div>
+        <div class="system-col-label">№ 03</div>
+        <div class="system-col-kanji">無我</div>
+        <div class="system-col-title">The Dissolving Self</div>
+      </div>
+      <div>
+        <div class="system-swatch-mini" style="background:#2D2E38;"></div>
+        <div class="system-swatch-mini" style="background:#4A4B58;"></div>
+        <div class="system-swatch-mini" style="background:#8B8799;"></div>
+        <div class="system-swatch-mini" style="background:#B8B0BC;"></div>
+        <div class="system-swatch-mini" style="background:#E5E0E8;"></div>
+        <div class="system-swatch-mini" style="background:#6B6378;"></div>
+        <div class="system-col-use">identity · not-self · social face</div>
+      </div>
+    </div>
+
+    <div class="system-col">
+      <div>
+        <div class="system-col-label">№ 04</div>
+        <div class="system-col-kanji">滑稽</div>
+        <div class="system-col-title">The Cosmic Joke</div>
+      </div>
+      <div>
+        <div class="system-swatch-mini" style="background:#1C1412;"></div>
+        <div class="system-swatch-mini" style="background:#5E1A1A;"></div>
+        <div class="system-swatch-mini" style="background:#5C4A2A;"></div>
+        <div class="system-swatch-mini" style="background:#C9A961;"></div>
+        <div class="system-swatch-mini" style="background:#A8B03F;"></div>
+        <div class="system-swatch-mini" style="background:#E8DCC0;"></div>
+        <div class="system-col-use">wit · confession · provocation</div>
+      </div>
+    </div>
+
+    <div class="system-col">
+      <div>
+        <div class="system-col-label">№ 05</div>
+        <div class="system-col-kanji">無</div>
+        <div class="system-col-title">Mu / The Unasked Question</div>
+      </div>
+      <div>
+        <div class="system-swatch-mini" style="background:#1A1E16;"></div>
+        <div class="system-swatch-mini" style="background:#32382A;"></div>
+        <div class="system-swatch-mini" style="background:#595E48;"></div>
+        <div class="system-swatch-mini" style="background:#8C8A6A;"></div>
+        <div class="system-swatch-mini" style="background:#CDBF9F;"></div>
+        <div class="system-swatch-mini" style="background:#7A3B2F;"></div>
+        <div class="system-col-use">silence · refusal · zen · koan</div>
+      </div>
+    </div>
+
+    <div class="system-col">
+      <div>
+        <div class="system-col-label">№ 06</div>
+        <div class="system-col-kanji">侘</div>
+        <div class="system-col-title">Nothing to Lose</div>
+      </div>
+      <div>
+        <div class="system-swatch-mini" style="background:#0F0D0C;"></div>
+        <div class="system-swatch-mini" style="background:#3A332E;"></div>
+        <div class="system-swatch-mini" style="background:#7A6E5F;"></div>
+        <div class="system-swatch-mini" style="background:#B5A994;"></div>
+        <div class="system-swatch-mini" style="background:#EAE3D2;"></div>
+        <div class="system-swatch-mini" style="background:#5A2A20;"></div>
+        <div class="system-col-use">manifesto · austere · undefended</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-family:'Fraunces',serif; font-weight:300; font-size:0.95rem; line-height:1.6; max-width:60ch; color:var(--ink); opacity:0.7; margin-top:3rem;">
+    Rule of the shelf: no more than three palettes visible at once in any rollout window. The eye needs room. Rotate quarterly. Palette 01 and 06 are the structural ends — anchor and austerity — and should be the most frequently used.
+  </p>
+</section>
+
+<!-- ============ COVER SPECIMENS ============ -->
+<section class="specimens-section">
+  <div class="palette-header">
+    <div class="palette-num">SPECIMEN</div>
+    <div class="palette-name">How it <em>reads</em> as a shelf</div>
+    <div class="palette-meta">COVER COMPOSITIONS · PREVIEW</div>
+  </div>
+
+  <div class="specimen-grid">
+
+    <!-- 01 -->
+    <div class="cover" style="background:#1F1B1A;">
+      <div class="cover-label" style="color:#A89680;">WHISPER · 01</div>
+      <div class="cover-kanji" style="color:#8B3A3A;">不安</div>
+      <div>
+        <div class="cover-title" style="color:#D4C4AA;">a bundle<br/>of <em style="color:#8B3A3A;">anxiety</em></div>
+        <div class="cover-foot" style="color:#A89680;">THE HONEST HYPOCRITE</div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="cover" style="background:#2B1F1B;">
+      <div class="cover-label" style="color:#B87A5E;">WHISPER · 02</div>
+      <div class="cover-kanji" style="color:#D9A688;">身</div>
+      <div>
+        <div class="cover-title" style="color:#E8D5C0;">the body<br/>is <em style="color:#D9A688;">not</em><br/>the problem</div>
+        <div class="cover-foot" style="color:#B87A5E;">THE HONEST HYPOCRITE</div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="cover" style="background:#E5E0E8;">
+      <div class="cover-label" style="color:#6B6378;">WHISPER · 03</div>
+      <div class="cover-kanji" style="color:#6B6378;">無我</div>
+      <div>
+        <div class="cover-title" style="color:#2D2E38; font-style:italic;">on being<br/>no one<br/>in particular</div>
+        <div class="cover-foot" style="color:#6B6378;">THE HONEST HYPOCRITE</div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="cover" style="background:#5E1A1A;">
+      <div class="cover-label" style="color:#C9A961;">WHISPER · 04</div>
+      <div class="cover-kanji" style="color:#C9A961;">滑稽</div>
+      <div>
+        <div class="cover-title" style="color:#E8DCC0;">the <em style="color:#C9A961;">joke</em><br/>is on<br/>all of us</div>
+        <div class="cover-foot" style="color:#C9A961;">THE HONEST HYPOCRITE</div>
+      </div>
+    </div>
+
+    <!-- 05 (new - Mu) -->
+    <div class="cover" style="background:#32382A;">
+      <div class="cover-label" style="color:#CDBF9F;">WHISPER · 05</div>
+      <div class="cover-kanji" style="color:#7A3B2F;">無</div>
+      <div>
+        <div class="cover-title" style="color:#CDBF9F;">the answer<br/>is <em style="color:#7A3B2F;">mu</em></div>
+        <div class="cover-foot" style="color:#CDBF9F;">THE HONEST HYPOCRITE</div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="cover" style="background:#EAE3D2; border:1px solid #0F0D0C;">
+      <div class="cover-label" style="color:#7A6E5F;">WHISPER · 06</div>
+      <div class="cover-kanji" style="color:#7A6E5F;">侘</div>
+      <div>
+        <div class="cover-title" style="color:#0F0D0C;">nothing<br/>to <em>lose<span style="color:#5A2A20;">.</span></em></div>
+        <div class="cover-foot" style="color:#7A6E5F;">THE HONEST HYPOCRITE</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p>
+    The honest hypocrite doesn't arrive. He reports from inside the weather. These palettes are the weather.
+  </p>
+  <div class="sig">WHISPER <span class="sig-kanji">·</span> COLOR STUDIES <span class="sig-kanji">心</span> V.02</div>
+</footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.swatch').forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      const hex = swatch.dataset.hex;
+      navigator.clipboard.writeText(hex).then(() => {
+        const btn = swatch.querySelector('.copy-btn');
+        btn.classList.add('copied');
+        setTimeout(() => btn.classList.remove('copied'), 1400);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
